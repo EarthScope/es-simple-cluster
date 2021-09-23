@@ -67,10 +67,9 @@ services:
       SCHEMA_REGISTRY_LISTENERS: http://0.0.0.0:8081
 
 
- 
 
   ###
-  # Kafka UIs (landoop)
+  # Kafka UI (landoop)
   ###
 
   # RESTful proxy for kafka
@@ -246,12 +245,13 @@ services:
 #
 #  # Example web interfaces (collection and distribution)
 #  django-web:
-#    # GitHub repository image
-#    image: ghcr.io/earthscope/es-example-django:main
-#    command: gunicorn -c ./gunicorn.conf.py
-#    volumes:
-#      # AVRO schemas
-#      - ./avro_schemas:/avro_schemas:ro
+#     # GitHub repository image
+#     image: ghcr.io/earthscope/es-example-django:main
+#     command: gunicorn -c ./gunicorn.conf.py
+#     restart: unless-stopped
+#     volumes:
+#       # AVRO schemas
+#       - ./avro_schemas:/avro_schemas:ro
 #      # Static files area
 #      - web-static:/web-static
 #    env_file:
@@ -266,12 +266,13 @@ services:
 #
 #  # Example data archiver
 #  django-archiver:
-#    # GitHub repository image
-#    image: ghcr.io/earthscope/es-example-django:main
-#    command: python manage.py run_kafka_consumer
-#    depends_on:
-#      - broker
-#      - schema-registry
+#     # GitHub repository image
+#     image: ghcr.io/earthscope/es-example-django:main
+#     command: python manage.py run_kafka_consumer
+#     restart: unless-stopped
+#     depends_on:
+#       - broker
+#       - schema-registry
 #    volumes:
 #      # AVRO schemas
 #      - ./avro_schemas:/avro_schemas:ro
