@@ -220,14 +220,15 @@ oauth:
 
   # Generic OpenID Connect
   provider: oidc
-  client_id: cilogon:/client_id/7b1d69bc506572a4f7153fbc5103e213
-  client_secret: MPT7PMDWxuCsBGUXWOOkSKj9uGpRs3k-rvslUVDgY406CwcG0YHDA1md8OI6kuYhZLyEsnoCWMIxAzdtAkSDcQ
-  auth_url: https://cilogon.org/authorize
-  token_url: https://cilogon.org/oauth2/token
-  user_info_url: https://cilogon.org/oauth2/userinfo
+  client_id: iRws4y1m7rLoP1R26xcn8yo1eZIFIb5x
+  client_secret: WhrLrzaidXXq6jWCQPT3IvEA9I_itClEhc6VLxu-CHGqwnKbZ6bfvbV69qtcero3
+  auth_url: https://dev-mt5crvmj.us.auth0.com/authorize
+  token_url: https://dev-mt5crvmj.us.auth0.com/oauth/token
+  user_info_url: https://dev-mt5crvmj.us.auth0.com/userinfo
   # end_session_endpoint is usually the IdP's logout URL
   # see https://github.com/vouch/vouch-proxy/pull/258
-  end_session_endpoint: https://cilogon.org/logout
+  # end_session_endpoint: https://dev-mt5crvmj.us.auth0.com/v2/logout
+  end_session_endpoint: https://dev-mt5crvmj.us.auth0.com/v2/logout?client_id=iRws4y1m7rLoP1R26xcn8yo1eZIFIb5x&returnTo=http://localhost:8080/user/
   scopes:
     - openid
     - email
